@@ -1,0 +1,47 @@
+<ng-container *ngIf="exchangeData$ | async as data; else loading">
+  
+  <div>{{currency}} FX</div>
+  <div>date: {{data?.date | date: 'dd-MM-yyyy'}}</div>
+    <table class="currency-item-table">
+      <thead>
+        <tr>
+          <th>Currency</th>
+          <th>Value</th>
+        </tr>
+    </thead>
+      <tbody>
+        <tr *ngFor="let rate of data?.rates! | paginate: { id:currency, itemsPerPage: 5, currentPage: page }">
+          <td>{{rate.currency!}}</td>
+          <td>{{rate.value! | format}}</td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="has-text-centered">
+      <pagination-controls [id]="currency" (pageChange)="page = $event"></pagination-controls>
+    </div>
+    <button (click)="clickHandler()" class="btn btn-primary">
+      Refresh
+    </button>
+</ng-container>
+
+
+<ng-template #loading>
+  <div class="loading">
+      loading...
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200"><rect fill="#FFF" width="100%" height="100%"/><circle fill="#300415" stroke="#300415" stroke-width="15" r="15" cx="40" cy="65"><animate attributeName="cy" calcMode="spline" dur="2" values="65;135;65;" keySplines=".5 0 .5 1;.5 0 .5 1" repeatCount="indefinite" begin="-.4"></animate></circle><circle fill="#300415" stroke="#300415" stroke-width="15" r="15" cx="100" cy="65"><animate attributeName="cy" calcMode="spline" dur="2" values="65;135;65;" keySplines=".5 0 .5 1;.5 0 .5 1" repeatCount="indefinite" begin="-.2"></animate></circle><circle fill="#300415" stroke="#300415" stroke-width="15" r="15" cx="160" cy="65"><animate attributeName="cy" calcMode="spline" dur="2" values="65;135;65;" keySplines=".5 0 .5 1;.5 0 .5 1" repeatCount="indefinite" begin="0"></animate></circle></svg>
+</div>
+</ng-template>
+
+<table>
+  <thead>
+    <tr>
+     <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td></td>
+    </tr>
+  </tbody>
+</table>
+
