@@ -161,16 +161,17 @@
 
 <main class="main">
 
+  <div class="logo">
+    <img [src]="urlLogo" alt="logo Moneytrans" class="img-fluid"/>
+  </div>
  <div class="exchange-rate-container">
+  <div class="exchange-rate-container__usd">
+    <currency-item  currency="USD"></currency-item>
+  </div>
 
-<div class="exchange-rate-container__usd">
-   <currency-item  currency="USD"></currency-item>
-
-</div>
-
-<div class="exchange-rate-container__eur">
-  <currency-item  currency="EUR"></currency-item>
-</div>
+  <div class="exchange-rate-container__eur">
+    <currency-item  currency="EUR"></currency-item>
+  </div>
 
 </div>
 

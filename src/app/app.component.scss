@@ -11,3 +11,11 @@
     min-height: 320px;
   }
 }
+
+.logo {
+  display: flex;
+  justify-content: center;
+  img {
+    width: 100px;
+  }
+}

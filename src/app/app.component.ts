@@ -28,6 +28,10 @@ export class AppComponent {
 
   title = 'mt-test-angular';
 
+  urlLogo =
+  'https://www.moneytrans.eu/spain/wp-content/uploads/sites/26/2021/04/moneytrans-logo.svg';
+
+
    constructor() {}
 
   
