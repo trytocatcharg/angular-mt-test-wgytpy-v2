@@ -1,11 +1,9 @@
 import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { Observable, of } from 'rxjs';
 import { ExchangeApiService } from './components/services/exchange-api.service';
 import { CurrencyItemComponent } from './components/currency-item.component';
-// import { ExchangeModels } from './models/exchange-rate.model';
 
 export interface ExchangeModels {
   base: string;
